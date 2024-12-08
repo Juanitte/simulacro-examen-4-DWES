@@ -13,7 +13,9 @@ export async function login(formData) {
   const callbackUrl = formData.get('callbackUrl') || LOGIN_URL
 
   // Comprobar si credenciales son válidas
-  const authenticated = true  // suponemos que son válidas
+  const authenticated = () => {
+    return (username === 'usuario1' && password === 'usuario1' || username === 'usuario2' && password === 'usuario2') 
+  };
 
   if (!authenticated) return
 
